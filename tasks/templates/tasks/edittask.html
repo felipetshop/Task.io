@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mt-5">
+                <div class="card-header text-center bg-primary text-white">
+                    <h2>Editando '{{ task.title }}'</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form.title.label_tag }}
+                            {{ form.title }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.description.label_tag }}
+                            {{ form.description }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.due_date.label_tag }}
+                            {{ form.due_date }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.completed.label_tag }}
+                            {{ form.completed }}
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-success mt-3" value="Salvar Tarefa">
+                            <a href="{% url 'tasks_list_view' %}" class="btn btn-secondary mt-3">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
