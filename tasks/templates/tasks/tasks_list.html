@@ -14,7 +14,7 @@
             <button type="button" class="list-group-item list-group-item-primary list-group-item-action" data-bs-toggle="modal" data-bs-target="#modal{{ task.id }}">
           {% endif %}
             <h5 class="mb-1">{{ task.title|capfirst }}</h5>
-            <small>Criado em: {{ task.created_at|date:"d/m/Y H:i" }}</small>
+            <small>Criado em: {{ task.created_at|date:"d/m/Y" }}</small>
           </button>
        
           <div class="modal fade" id="modal{{ task.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
