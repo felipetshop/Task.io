@@ -1,2 +1,2 @@
 # Task.io
-Gerenciador de tarefas
+Gerenciador de tarefas utilizando python e django
